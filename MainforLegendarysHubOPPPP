@@ -678,3 +678,4 @@ game.Players.LocalPlayer.Number.Value = game.Players.LocalPlayer.Number.Value - 
 CurrentPower.Text = "Current Power = " .. game.Players.LocalPlayer.Number.Value
 end)
 end)
+end)
