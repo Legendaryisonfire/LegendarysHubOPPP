@@ -39,7 +39,6 @@ autotime.TextScaled = true
 autotime.TextSize = 14.000
 autotime.TextWrapped = true
 autotime.MouseButton1Down:connect(function()
-autotime.MouseButton1Down:connect(function()
 -- From yours truly.
 local uis = game:GetService("UserInputService")
 local player = game.Players.LocalPlayer
