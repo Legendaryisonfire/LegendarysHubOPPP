@@ -39,55 +39,8 @@ autotime.TextScaled = true
 autotime.TextSize = 14.000
 autotime.TextWrapped = true
 autotime.MouseButton1Down:connect(function()
--- From yours truly.
-local uis = game:GetService("UserInputService")
-local player = game.Players.LocalPlayer
-local rblx_connection = nil
-local hm = function()
-    if player.Character:FindFirstChild("ball.weld") then
-        player.Character.LowerTorso.MainGui.Shooting.Bar:TweenSize(UDim2.new(.5, 0, 1, 0), "Out", "Linear", 0, true)
-    end
-end
-
-uis.InputBegan:Connect(function(key, gpe)
-    if gpe then return end
-    if key.KeyCode == Enum.KeyCode.E then
-        rblx_connection = game:GetService("RunService").Stepped:Connect(hm)
-    end
-end)
-
-uis.InputEnded:Connect(function(key, gpe)
-    if gpe then return end
-
-    if key.KeyCode == Enum.KeyCode.E then
-        rblx_connection:Disconnect()
-        rblx_connection = nil
-        repeat wait()
-            player.Character.LowerTorso.MainGui.Shooting.Bar:TweenSize(UDim2.new(.5, 0, 1, 0), "Out", "Linear", 0, true)
-        until not player.Character:FindFirstChild("ball.weld")
-        wait(0.5)
-        player.Character.LowerTorso.MainGui.Shooting.Bar:TweenSize(UDim2.new(0, 0, 1, 0), "Out", "Linear", 0, true)
-    end
-end)
-
-warn("Loaded completely.")
-
-end)
-
-autoscore.Name = "autoscore"
-autoscore.Parent = main
-autoscore.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-autoscore.Position = UDim2.new(-0.00101321144, 0, 0.0267224126, 0)
-autoscore.Size = UDim2.new(0, 200, 0, 38)
-autoscore.Font = Enum.Font.GothamBold
-autoscore.Text = "Auto Score"
-autoscore.TextColor3 = Color3.fromRGB(255, 255, 255)
-autoscore.TextScaled = true
-autoscore.TextSize = 14.000
-autoscore.TextWrapped = true
-autoscore.MouseButton1Down:connect(function()
+--Remade By pd.legendary#7357
 --Remember SimRadius In Admin And Enjoy
-
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -118,122 +71,133 @@ Main.Position = UDim2.new(0.260622233, 0, 0.476455241, 0)
 Main.Size = UDim2.new(0, 519, 0, 259)
 
 TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-TextLabel.BorderColor3 = Color3.fromRGB(0, 255, 0)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.Size = UDim2.new(0, 519, 0, 50)
-TextLabel.Font = Enum.Font.SourceSansSemibold
-TextLabel.Text = "RB World 2 AutoScore By Sxnetic9621"
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "RB World 2 AutoScore By pd.legendary#7357"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
 TextLabel.TextSize = 20.000
 
 WestAuto2.Name = "WestAuto2"
 WestAuto2.Parent = Main
-WestAuto2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto2.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto2.Position = UDim2.new(0.575647771, 0, 0.285426915, 0)
 WestAuto2.Size = UDim2.new(0, 220, 0, 50)
-WestAuto2.Font = Enum.Font.SourceSansSemibold
+WestAuto2.Font = Enum.Font.GothamBold
 WestAuto2.Text = "West Court 2"
 WestAuto2.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto2.TextScaled = true
 WestAuto2.TextSize = 20.000
 
 WestAuto1.Name = "WestAuto1"
 WestAuto1.Parent = Main
-WestAuto1.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto1.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto1.Position = UDim2.new(-0.000460174488, 0, 0.286323935, 0)
 WestAuto1.Size = UDim2.new(0, 220, 0, 50)
-WestAuto1.Font = Enum.Font.SourceSansSemibold
+WestAuto1.Font = Enum.Font.GothamBold
 WestAuto1.Text = "West Court 1"
 WestAuto1.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto1.TextScaled = true
 WestAuto1.TextSize = 20.000
 
 WestAuto3.Name = "WestAuto3"
 WestAuto3.Parent = Main
-WestAuto3.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto3.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto3.Position = UDim2.new(0, 0, 0.521235526, 0)
 WestAuto3.Size = UDim2.new(0, 110, 0, 50)
-WestAuto3.Font = Enum.Font.SourceSansSemibold
+WestAuto3.Font = Enum.Font.GothamBold
 WestAuto3.Text = "West Court 3,1"
 WestAuto3.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto3.TextScaled = true
 WestAuto3.TextSize = 20.000
 
 WestAuto32.Name = "WestAuto32"
 WestAuto32.Parent = Main
-WestAuto32.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto32.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto32.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto32.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto32.Position = UDim2.new(0.211946055, 0, 0.521235526, 0)
 WestAuto32.Size = UDim2.new(0, 110, 0, 50)
-WestAuto32.Font = Enum.Font.SourceSansSemibold
+WestAuto32.Font = Enum.Font.GothamBold
 WestAuto32.Text = "West Court 3,2"
 WestAuto32.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto32.TextScaled = true
 WestAuto32.TextSize = 20.000
 
 WestAuto42.Name = "WestAuto42"
 WestAuto42.Parent = Main
-WestAuto42.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto42.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto42.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto42.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto42.Position = UDim2.new(0.78805393, 0, 0.521235526, 0)
 WestAuto42.Size = UDim2.new(0, 110, 0, 50)
-WestAuto42.Font = Enum.Font.SourceSansSemibold
+WestAuto42.Font = Enum.Font.GothamBold
 WestAuto42.Text = "West Court 4,2"
 WestAuto42.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto42.TextScaled = true
 WestAuto42.TextSize = 20.000
 
 WestAuto4.Name = "WestAuto4"
 WestAuto4.Parent = Main
-WestAuto4.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto4.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto4.Position = UDim2.new(0.575647712, 0, 0.521235526, 0)
 WestAuto4.Size = UDim2.new(0, 110, 0, 50)
-WestAuto4.Font = Enum.Font.SourceSansSemibold
+WestAuto4.Font = Enum.Font.GothamBold
 WestAuto4.Text = "West Court 4,1"
 WestAuto4.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto4.TextScaled = true
 WestAuto4.TextSize = 20.000
 
 WestAuto5.Name = "WestAuto5"
 WestAuto5.Parent = Main
-WestAuto5.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto5.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto5.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto5.Position = UDim2.new(0, 0, 0.749034762, 0)
 WestAuto5.Size = UDim2.new(0, 110, 0, 50)
-WestAuto5.Font = Enum.Font.SourceSansSemibold
+WestAuto5.Font = Enum.Font.GothamBold
 WestAuto5.Text = "West Court 5,1"
 WestAuto5.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto5.TextScaled = true
 WestAuto5.TextSize = 20.000
 
 WestAuto52.Name = "WestAuto52"
 WestAuto52.Parent = Main
-WestAuto52.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto52.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto52.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto52.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto52.Position = UDim2.new(0.211946055, 0, 0.749034762, 0)
 WestAuto52.Size = UDim2.new(0, 110, 0, 50)
-WestAuto52.Font = Enum.Font.SourceSansSemibold
+WestAuto52.Font = Enum.Font.GothamBold
 WestAuto52.Text = "West Court 5,2"
 WestAuto52.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto52.TextScaled = true
 WestAuto52.TextSize = 20.000
 
 WestAuto6.Name = "WestAuto6"
 WestAuto6.Parent = Main
-WestAuto6.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto6.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto6.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto6.Position = UDim2.new(0.574181139, 0, 0.749034762, 0)
 WestAuto6.Size = UDim2.new(0, 110, 0, 50)
-WestAuto6.Font = Enum.Font.SourceSansSemibold
+WestAuto6.Font = Enum.Font.GothamBold
 WestAuto6.Text = "West Court 6,1"
 WestAuto6.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto6.TextScaled = true
 WestAuto6.TextSize = 20.000
 
 WestAuto62.Name = "WestAuto62"
 WestAuto62.Parent = Main
-WestAuto62.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-WestAuto62.BorderColor3 = Color3.fromRGB(0, 255, 0)
+WestAuto62.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WestAuto62.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WestAuto62.Position = UDim2.new(0.78805393, 0, 0.749034762, 0)
 WestAuto62.Size = UDim2.new(0, 110, 0, 50)
-WestAuto62.Font = Enum.Font.SourceSansSemibold
+WestAuto62.Font = Enum.Font.GothamBold
 WestAuto62.Text = "West Court 6,2"
 WestAuto62.TextColor3 = Color3.fromRGB(0, 0, 0)
+WestAuto62.TextScaled = true
 WestAuto62.TextSize = 20.000
 
 -- Scripts:
@@ -389,6 +353,21 @@ local function WZOF_fake_script() -- ScreenGui.LocalScript
 	frame.Selectable = true
 end
 coroutine.wrap(WZOF_fake_script)()
+local function ZQALJTU_fake_script() -- main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	while wait(0.1) do
+		script.Parent.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	
+		counter = counter + 0.01
+	end
+	
+end
+coroutine.wrap(ZQALJTU_fake_script)()
 end)
 
 autoguard.Name = "autoguard"
