@@ -39,6 +39,54 @@ autotime.TextScaled = true
 autotime.TextSize = 14.000
 autotime.TextWrapped = true
 autotime.MouseButton1Down:connect(function()
+autotime.MouseButton1Down:connect(function()
+-- From yours truly.
+local uis = game:GetService("UserInputService")
+local player = game.Players.LocalPlayer
+local rblx_connection = nil
+local hm = function()
+    if player.Character:FindFirstChild("ball.weld") then
+        player.Character.LowerTorso.MainGui.Shooting.Bar:TweenSize(UDim2.new(.5, 0, 1, 0), "Out", "Linear", 0, true)
+    end
+end
+
+uis.InputBegan:Connect(function(key, gpe)
+    if gpe then return end
+    if key.KeyCode == Enum.KeyCode.E then
+        rblx_connection = game:GetService("RunService").Stepped:Connect(hm)
+    end
+end)
+
+uis.InputEnded:Connect(function(key, gpe)
+    if gpe then return end
+
+    if key.KeyCode == Enum.KeyCode.E then
+        rblx_connection:Disconnect()
+        rblx_connection = nil
+        repeat wait()
+            player.Character.LowerTorso.MainGui.Shooting.Bar:TweenSize(UDim2.new(.5, 0, 1, 0), "Out", "Linear", 0, true)
+        until not player.Character:FindFirstChild("ball.weld")
+        wait(0.5)
+        player.Character.LowerTorso.MainGui.Shooting.Bar:TweenSize(UDim2.new(0, 0, 1, 0), "Out", "Linear", 0, true)
+    end
+end)
+
+warn("Loaded completely.")
+
+end)
+
+autoscore.Name = "autoscore"
+autoscore.Parent = main
+autoscore.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+autoscore.Position = UDim2.new(-0.00101321144, 0, 0.0267224126, 0)
+autoscore.Size = UDim2.new(0, 200, 0, 38)
+autoscore.Font = Enum.Font.GothamBold
+autoscore.Text = "Auto Score"
+autoscore.TextColor3 = Color3.fromRGB(255, 255, 255)
+autoscore.TextScaled = true
+autoscore.TextSize = 14.000
+autoscore.TextWrapped = true
+autoscore.MouseButton1Down:connect(function()
 --Remade By pd.legendary#7357
 --Remember SimRadius In Admin And Enjoy
 -- Instances:
