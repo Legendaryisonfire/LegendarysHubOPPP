@@ -10,7 +10,7 @@ local close = Instance.new("TextButton")
 local infiniteyield = Instance.new("TextButton")
 local fling = Instance.new("TextButton")
 local percentchanger = Instance.new("TextButton")
-
+local fasttp = Instance.new("TextButton")
 
 --Properties:
 
@@ -707,3 +707,18 @@ percentchanger.MouseButton1Down:connect(function()
 		return oldNamecall(self, ...) 
 	end)
 end)
+
+fasttp.Name = "fasttp"
+fasttp.Parent = main
+fasttp.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+fasttp.Position = UDim2.new(-0.00101321144, 0, 0.161691725, 0)
+fasttp.Size = UDim2.new(0, 200, 0, 38)
+fasttp.Font = Enum.Font.GothamBold
+fasttp.Text = "FastTP"
+fasttp.TextColor3 = Color3.fromRGB(255, 255, 255)
+fasttp.TextScaled = true
+fasttp.TextSize = 14.000
+fasttp.TextWrapped = true
+fasttp.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Legendaryisonfire/LegendarysHubFastTP/main/FastTP'),true))()
+    end)
