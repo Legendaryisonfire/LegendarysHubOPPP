@@ -887,7 +887,7 @@ percent70.MouseButton1Down:connect(function()
 		local args = {...}
 
 		if method == "FireServer" and (args[1] == ClosestPart()) then
-			args[2] = 100
+			args[2] = 70
 			args[3] = true
 			return self.FireServer(self, unpack(args))
 		end
