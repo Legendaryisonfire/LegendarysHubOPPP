@@ -1,7 +1,5 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
+--Main--
+--Made By pd.legendary#7357 + pd.mythical#8621
 
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("ScrollingFrame")
@@ -11,13 +9,7 @@ local autoguard = Instance.new("TextButton")
 local close = Instance.new("TextButton")
 local infiniteyield = Instance.new("TextButton")
 local fling = Instance.new("TextButton")
-local percent100 = Instance.new("TextButton")
-local percent95 = Instance.new("TextButton")
-local percent90 = Instance.new("TextButton")
-local percent85 = Instance.new("TextButton")
-local percent80 = Instance.new("TextButton")
-local percent75 = Instance.new("TextButton")
-local percent70 = Instance.new("TextButton")
+local percentchanger = Instance.new("TextButton")
 
 
 --Properties:
@@ -686,18 +678,18 @@ fling.MouseButton1Down:connect(function()
 	end)
 end)
 
-percent100.Name = "percent100"
-percent100.Parent = main
-percent100.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-percent100.Position = UDim2.new(-0.00101321144, 0, 0.135311365, 0)
-percent100.Size = UDim2.new(0, 200, 0, 38)
-percent100.Font = Enum.Font.GothamBold
-percent100.Text = "100% All Shots"
-percent100.TextColor3 = Color3.fromRGB(255, 255, 255)
-percent100.TextScaled = true
-percent100.TextSize = 14.000
-percent100.TextWrapped = true
-percent100.MouseButton1Down:connect(function()
+percentchanger.Name = "percentchanger"
+percentchanger.Parent = main
+percentchanger.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+percentchanger.Position = UDim2.new(-0.00101321144, 0, 0.135311365, 0)
+percentchanger.Size = UDim2.new(0, 200, 0, 38)
+percentchanger.Font = Enum.Font.GothamBold
+percentchanger.Text = "Percent Changer"
+percentchanger.TextColor3 = Color3.fromRGB(255, 255, 255)
+percentchanger.TextScaled = true
+percentchanger.TextSize = 14.000
+percentchanger.TextWrapped = true
+percentchanger.MouseButton1Down:connect(function()
 	local gmt = getrawmetatable(game)
 	setreadonly(gmt, false)
 	local oldNamecall = gmt.__namecall
@@ -708,186 +700,6 @@ percent100.MouseButton1Down:connect(function()
 
 		if method == "FireServer" and (args[1] == ClosestPart()) then
 			args[2] = 100
-			args[3] = true
-			return self.FireServer(self, unpack(args))
-		end
-
-		return oldNamecall(self, ...) 
-	end)
-end)
-
-percent95.Name = "percent95"
-percent95.Parent = main
-percent95.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-percent95.Position = UDim2.new(-0.00101321144, 0, 0.161691725, 0)
-percent95.Size = UDim2.new(0, 200, 0, 38)
-percent95.Font = Enum.Font.GothamBold
-percent95.Text = "95% All Shots"
-percent95.TextColor3 = Color3.fromRGB(255, 255, 255)
-percent95.TextScaled = true
-percent95.TextSize = 14.000
-percent95.TextWrapped = true
-percent95.MouseButton1Down:connect(function()
-	local gmt = getrawmetatable(game)
-	setreadonly(gmt, false)
-	local oldNamecall = gmt.__namecall
-
-	gmt.__namecall = newcclosure(function(self, ...)
-		local method = getnamecallmethod()
-		local args = {...}
-
-		if method == "FireServer" and (args[1] == ClosestPart()) then
-			args[2] = 95
-			args[3] = true
-			return self.FireServer(self, unpack(args))
-		end
-
-		return oldNamecall(self, ...) 
-	end)
-end)
-
-percent90.Name = "percent90"
-percent90.Parent = main
-percent90.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-percent90.Position = UDim2.new(-0.00101321144, 0, 0.189299092, 0)
-percent90.Size = UDim2.new(0, 200, 0, 38)
-percent90.Font = Enum.Font.GothamBold
-percent90.Text = "90% All Shots"
-percent90.TextColor3 = Color3.fromRGB(255, 255, 255)
-percent90.TextScaled = true
-percent90.TextSize = 14.000
-percent90.TextWrapped = true
-percent90.MouseButton1Down:connect(function()
-	local gmt = getrawmetatable(game)
-	setreadonly(gmt, false)
-	local oldNamecall = gmt.__namecall
-
-	gmt.__namecall = newcclosure(function(self, ...)
-		local method = getnamecallmethod()
-		local args = {...}
-
-		if method == "FireServer" and (args[1] == ClosestPart()) then
-			args[2] = 90
-			args[3] = true
-			return self.FireServer(self, unpack(args))
-		end
-
-		return oldNamecall(self, ...) 
-	end)
-end)
-
-percent85.Name = "percent85"
-percent85.Parent = main
-percent85.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-percent85.Position = UDim2.new(-0.00101321144, 0, 0.216292962, 0)
-percent85.Size = UDim2.new(0, 200, 0, 38)
-percent85.Font = Enum.Font.GothamBold
-percent85.Text = "85% All Shots"
-percent85.TextColor3 = Color3.fromRGB(255, 255, 255)
-percent85.TextScaled = true
-percent85.TextSize = 14.000
-percent85.TextWrapped = true
-percent85.MouseButton1Down:connect(function()
-	local gmt = getrawmetatable(game)
-	setreadonly(gmt, false)
-	local oldNamecall = gmt.__namecall
-
-	gmt.__namecall = newcclosure(function(self, ...)
-		local method = getnamecallmethod()
-		local args = {...}
-
-		if method == "FireServer" and (args[1] == ClosestPart()) then
-			args[2] = 85
-			args[3] = true
-			return self.FireServer(self, unpack(args))
-		end
-
-		return oldNamecall(self, ...) 
-	end)
-end)
-
-percent80.Name = "percent80"
-percent80.Parent = main
-percent80.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-percent80.Position = UDim2.new(-0.00101321144, 0, 0.243286833, 0)
-percent80.Size = UDim2.new(0, 200, 0, 38)
-percent80.Font = Enum.Font.GothamBold
-percent80.Text = "80% All Shots"
-percent80.TextColor3 = Color3.fromRGB(255, 255, 255)
-percent80.TextScaled = true
-percent80.TextSize = 14.000
-percent80.TextWrapped = true
-percent80.MouseButton1Down:connect(function()
-	local gmt = getrawmetatable(game)
-	setreadonly(gmt, false)
-	local oldNamecall = gmt.__namecall
-
-	gmt.__namecall = newcclosure(function(self, ...)
-		local method = getnamecallmethod()
-		local args = {...}
-
-		if method == "FireServer" and (args[1] == ClosestPart()) then
-			args[2] = 80
-			args[3] = true
-			return self.FireServer(self, unpack(args))
-		end
-
-		return oldNamecall(self, ...) 
-	end)
-end)
-
-percent75.Name = "percent75"
-percent75.Parent = main
-percent75.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-percent75.Position = UDim2.new(-0.00101321144, 0, 0.27150768, 0)
-percent75.Size = UDim2.new(0, 200, 0, 38)
-percent75.Font = Enum.Font.GothamBold
-percent75.Text = "75% All Shots"
-percent75.TextColor3 = Color3.fromRGB(255, 255, 255)
-percent75.TextScaled = true
-percent75.TextSize = 14.000
-percent75.TextWrapped = true
-percent75.MouseButton1Down:connect(function()
-	local gmt = getrawmetatable(game)
-	setreadonly(gmt, false)
-	local oldNamecall = gmt.__namecall
-
-	gmt.__namecall = newcclosure(function(self, ...)
-		local method = getnamecallmethod()
-		local args = {...}
-
-		if method == "FireServer" and (args[1] == ClosestPart()) then
-			args[2] = 75
-			args[3] = true
-			return self.FireServer(self, unpack(args))
-		end
-
-		return oldNamecall(self, ...) 
-	end)
-end)
-
-percent70.Name = "percent70"
-percent70.Parent = main
-percent70.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-percent70.Position = UDim2.new(-0.00101321144, 0, 0.298501521, 0)
-percent70.Size = UDim2.new(0, 200, 0, 38)
-percent70.Font = Enum.Font.GothamBold
-percent70.Text = "70% All Shots"
-percent70.TextColor3 = Color3.fromRGB(255, 255, 255)
-percent70.TextScaled = true
-percent70.TextSize = 14.000
-percent70.TextWrapped = true
-percent70.MouseButton1Down:connect(function()
-	local gmt = getrawmetatable(game)
-	setreadonly(gmt, false)
-	local oldNamecall = gmt.__namecall
-
-	gmt.__namecall = newcclosure(function(self, ...)
-		local method = getnamecallmethod()
-		local args = {...}
-
-		if method == "FireServer" and (args[1] == ClosestPart()) then
-			args[2] = 70
 			args[3] = true
 			return self.FireServer(self, unpack(args))
 		end
